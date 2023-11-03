@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>PortFolio</title>
+    <style>
+        body {
+            background-color: #101820;
+            overflow-x: hidden;
+            margin: 0vw;
+            padding: 0vw
+        }
+        a {
+            text-decoration: none;
+        }
+        .main {
+            height: 50vw;
+        }
+        #heading1 {
+            display: flex;
+            justify-content: center;
+            align-items: last baseline;
+            height: 6vw;
+            color: #FEE715;
+            font-family: 'Roboto Condensed', sans-serif;
+            word-spacing: 1vw;
+            font-size: 3vw;
+            cursor: default
+        }
+        
+        @keyframes blip {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .imgs {
+            opacity: 0;
+            width: 15vw;
+            position: absolute;
+            margin-left: 1vw;
+            margin-top: 3vw;
+            border: 0.3vw solid #F9E795;
+        }
+        .imgs:hover {
+            filter: brightness(1.2);
+        }
+        #img1 {
+            left: 0vw;
+            top: 10vw;
+            animation-name: blip;
+            animation-timing-function: linear;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        #img2 {
+            left: 20vw;
+            top: 15vw;
+            animation-name: blip;
+            animation-timing-function: linear;
+            animation-duration: 0.5s;
+            animation-delay: 0.8s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        #img3 {
+            left: 40vw;
+            top: 10vw;
+            animation-name: blip;
+            animation-timing-function: linear;
+            animation-duration: 0.5s;
+            animation-delay: 1.1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        #img4 {
+            left: 60vw;
+            top: 15vw;
+            animation-name: blip;
+            animation-timing-function: linear;
+            animation-duration: 0.5s;
+            animation-delay: 1.4s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        #img5 {
+            left: 80vw;
+            top: 10vw;
+            animation-name: blip;
+            animation-timing-function: linear;
+            animation-duration: 0.5s;
+            animation-delay: 1.7s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        #arrow {
+            width: 10vw;
+            transform: rotate(90deg);
+            position: absolute;
+            top: 55vw;
+            right: 45vw;
+        }
+
+        #txt {
+            font-size: 1.7vw;
+            color: white;
+            position: absolute;
+            top: 53vw;
+            right: 31vw;
+            width: 14vw;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .main2 {
+            height: 140vw;
+            background-color: #F9E795;
+            margin-top: 25vw;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .projectimg {
+            margin: 2vw 0vw 3vw 1vw;
+            width: 26vw;
+            height: 20vw;
+        }
+
+        .project {
+            height: 10vw;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .project:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: 0.3s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            height: 20vw;
+            width: 26vw;
+            margin: 2vw 0vw 3vw 1vw;
+            transition: .4s ease;
+        }
+
+        .projecttext {
+            font-size: 2.5vw;
+            position: absolute;
+            color: #fffacf;
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+        }
+
+        .project:hover .overlay {
+            opacity: 1;
+        }
+
+        .main3 {
+            background-color: #101820;
+            height: max-content;
+        }
+
+        #endtxt {
+            color: white;
+            font-size: 2vw;
+            text-align: justify;
+            font-family: 'Montserrat', sans-serif;
+            margin: 10vw 3vw 0vw 2vw;
+            line-height: 3vw;
+        }
+        #endtxt::first-letter {
+            font-size: 4vw;
+            font-weight: 700;
+        }
+
+        .themes {
+            margin-top: 5vw;
+            color: white;
+            background-color: black;
+            text-align: center;
+            font-size: 3vw;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1vw;
+            height: 35vw;
+        }
+
+        .themeimg {
+            width: 20vw;
+            border: 0.5vw solid white;
+            transition: 0.2s linear;
+        }
+        .themeimg:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+            transition: 0.2s linear;
+        }
+        .imagestheme {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #theme1 {
+            border-color: #fffacf;
+        }
+
+        .end1 {
+            height: 3vw;
+            color: #101820;
+            margin-top: 5vw;
+            font-size: 2.5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 0.7vw solid #F9E795;
+            font-family: 'Bebas Neue', sans-serif;
+            background-color: white;
+        }
+        .end2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            height: min-content;
+        }
+        .icons {
+            width: 4vw;
+            margin-top: 0.15vw;
+            margin-right: 2vw;
+            border: 0.3vw solid red;
+            border-radius: 10vw;
+        }
+        #icon1:hover {
+            content: url("git.gif");
+            color: #EFE1D1;
+            border-color: rgb(140, 78, 255);
+            cursor: pointer;
+        }
+        #icon2:hover {
+            content: url("insta.gif");
+            color: #EFE1D1;
+            border-color: rgb(140, 78, 255);
+            cursor: pointer;
+        }
+        #icon3:hover {
+            content: url("abc.gif");
+            color: #EFE1D1;
+            border-color: rgb(140, 78, 255);
+            cursor: pointer;
+        }
+        @media screen and (max-width: 414px) {
+            #heading1 {
+                font-size: 6vw;
+            }
+
+            .imgs {
+                opacity: 0;
+                width: 15vw;
+                margin-left: 2vw;
+                margin-top: 5vw;
+                height: 35vw;
+            }
+            #arrow {
+                width: 13vw;
+                top: 63vw;
+            }
+    
+            #txt {
+                font-size: 2.5vw;
+                top: 60vw;
+                right: 24vw;
+                width: 20vw;
+            }
+            .main2 {
+                margin-top: 25vw;
+                display: grid;
+                grid-template-columns: auto auto;
+                height: 465vw;
+            }
+            .projectimg {
+                margin: 5vw 0vw 5vw 1vw;
+                width: 45vw;
+                height: 35vw;
+            }
+            .overlay {
+                opacity: 1;
+                height: 7vw;
+                width: 45vw;
+                top: 18vw;
+                transition: none;
+            }
+            .projecttext {
+                font-size: 3.5vw;
+            }
+            .project:hover {
+                transform: none;
+            }
+            #endtxt {
+                font-size: 4vw;
+                margin: 5vw 3vw 0vw 2vw;
+                line-height: 6vw;
+            }
+            #endtxt::first-letter {
+                font-size: 6vw;
+            }
+            .end1 {
+                height: 7vw;
+                margin-top: 6vw;
+                font-size: 4.5vw;
+            }
+            .end2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                height: min-content;
+            }
+            .icons {
+                width: 7vw;
+                margin-top: 0.15vw;
+                border-radius: 10vw;
+            }
+            #icon1:hover {
+                content: none;
+            }
+            #icon2:hover {
+                content: none;
+            }
+            #icon3:hover {
+                content: none;
+            }
+        }
+        @media screen and (min-width: 415px) and (max-width: 601px) {
+            #heading1 {
+                font-size: 6vw;
+            }
+
+            .imgs {
+                opacity: 0;
+                width: 15vw;
+                margin-left: 2vw;
+                margin-top: 5vw;
+                height: 35vw;
+            }
+            #arrow {
+                width: 13vw;
+                top: 63vw;
+            }
+    
+            #txt {
+                font-size: 2.5vw;
+                top: 60vw;
+                right: 24vw;
+                width: 20vw;
+            }
+            .main2 {
+                margin-top: 25vw;
+                display: grid;
+                grid-template-columns: auto auto;
+                height: 465vw;
+            }
+            .projectimg {
+                margin: 5vw 0vw 5vw 1vw;
+                width: 45vw;
+                height: 35vw;
+            }
+            .overlay {
+                opacity: 1;
+                height: 7vw;
+                width: 45vw;
+                top: 18vw;
+                transition: none;
+            }
+            .projecttext {
+                font-size: 3.5vw;
+            }
+            .project:hover {
+                transform: none;
+            }
+            #endtxt {
+                font-size: 3.2vw;
+                margin: 5vw 3vw 0vw 2vw;
+                line-height: 6vw;
+            }
+            #endtxt::first-letter {
+                font-size: 6vw;
+            }
+            .end1 {
+                height: 6vw;
+                margin-top: 6vw;
+                font-size: 4vw;
+            }
+            .end2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                height: min-content;
+            }
+            .icons {
+                width: 6vw;
+                margin-top: 0.15vw;
+                border-radius: 10vw;
+            }
+            #icon1:hover {
+                content: none;
+            }
+            #icon2:hover {
+                content: none;
+            }
+            #icon3:hover {
+                content: none;
+            }
+        }
+   
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="contain1">
+            <p id="heading1">MY ♦ PORTFOLIO</p>
+        </div>
+        <div class="contain2">
+            <img src="img1.jpg" class="imgs" id="img1">
+            <img src="img2.jpg" class="imgs" id="img2">
+            <img src="img3.jpg" class="imgs" id="img3">
+            <img src="img4.jpg" class="imgs" id="img4">
+            <img src="img5.jpg" class="imgs" id="img5">
+        </div>
+    </div>
+    <div>
+        <img src="arrow.png" alt="uo" id="arrow">
+        <p id="txt">All projects along with source code</p>
+    </div>
+    <div class="main2">
+        <a href="">
+            <div class="project">
+                <img src="p1.jpg" alt="img" class="projectimg" id="projectimage1">
+                <div class="overlay">
+                    <p class="projecttext">ASTROLOGY WEBPAGE TEMPLATE</p>
+                </div>
+            </div>
+        </a>
+        <a href="">
+        <div class="project">
+            <img src="p2.jpg" alt="img" class="projectimg" id="projectimage2">
+            <div class="overlay">
+                <p class="projecttext">TWO PLAYER SNAKE GAME</p>
+            </div>
+        </div>
+        </a>
+        <a href="">
+            <div class="project">
+                <img src="p3.jpg" alt="img" class="projectimg" id="projectimage3">
+                <div class="overlay">
+                    <p class="projecttext">WEATHER APP</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p4.jpg" alt="img" class="projectimg" id="projectimage4">
+                <div class="overlay">
+                    <p class="projecttext">HANGMAN</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p5.jpg" alt="img" class="projectimg" id="projectimage5">
+                <div class="overlay">
+                    <p class="projecttext">DICTIONARY</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p6.jpg" alt="img" class="projectimg" id="projectimage6">
+                <div class="overlay">
+                    <p class="projecttext">QR CODE GENERATOR</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p7.jpg" alt="img" class="projectimg" id="projectimage7">
+                <div class="overlay">
+                    <p class="projecttext">INTERNET SPEED TEST</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p8.jpg" alt="img" class="projectimg" id="projectimage8">
+                <div class="overlay">
+                    <p class="projecttext">CONTACT LIST SAVE</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p9.jpg" alt="img" class="projectimg" id="projectimage9">
+                <div class="overlay">
+                    <p class="projecttext">DATA STORAGE</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p10.jpg" alt="img" class="projectimg" id="projectimage10">
+                <div class="overlay">
+                    <p class="projecttext">IMAGE FORMAT CHANGER</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p11.jpg" alt="img" class="projectimg" id="projectimage11">
+                <div class="overlay">
+                    <p class="projecttext">BILL INVOICE</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p12.jpg" alt="img" class="projectimg" id="projectimage12">
+                <div class="overlay">
+                    <p class="projecttext">URL SHORTNER</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p13.jpg" alt="img" class="projectimg" id="projectimage13">
+                <div class="overlay">
+                    <p class="projecttext">TIC TAC TOE</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p14.jpg" alt="img" class="projectimg" id="projectimage14">
+                <div class="overlay">
+                    <p class="projecttext">LOGIN WEBPAGE TEMPLATE</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p15.jpg" alt="img" class="projectimg" id="projectimage15">
+                <div class="overlay">
+                    <p class="projecttext">FILE ORGANIZER</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p16.jpg" alt="img" class="projectimg" id="projectimage16">
+                <div class="overlay">
+                    <p class="projecttext">PASSWORD GENERATOR</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p17.jpg" alt="img" class="projectimg" id="projectimage17">
+                <div class="overlay">
+                    <p class="projecttext">ROBOT</p>
+                </div>
+        </div>
+        </a>
+        <a href="" target="_blank">
+            <div class="project">
+                <img src="p18.jpg" alt="img" class="projectimg" id="projectimage18">
+                <div class="overlay">
+                    <p class="projecttext">PORTFOLIO WEBPAGE</p>
+                </div>
+        </div>
+        
+    </div></a>
+    <di target="_blank"v class="main3">
+        <p id="endtxt">My name is Keshav, currently living in India. I am a fresher studying Computer Science. In terms of experience, I know Python, SQL, JavaScript, HTML and CSS. Most of my interest goes into Web designing, GUI app developing and Data related stuff. I use JSON, currently in order to store and retrieve data. I use Git to commit all of my projects. After being well versed with data storing techniques, I will be focusing on new and easier way of storing and retrieving of data. Months after, I will be creating more complex projects and gain experience. The projects above are quite beginner level but I am growing, learning and trying to create more amazing projects which can help me learn even more about various concepts. Also, the description of every project is on the github. Just click on the image of the project and it will redirect you to that Github page. After that, just open the Readme file to get the information of how the project works. The webpage will get updated on a monthly basis or maybe every 2 months. I am also working on learning more modules along with my studies. Below are my social handles!</p>
+    </div>
+    <div class="themes">
+        <h2 id="themehead">THEMES</h2>
+        <div class="imagestheme">
+            <img src="theme1.png" id="theme1" alt="imgtheme" class="themeimg">
+            <img src="theme2.png" id="theme2" alt="imgtheme" class="themeimg">
+            <img src="theme3.png" id="theme3" alt="imgtheme" class="themeimg">
+            <img src="theme4.png" id="theme4" alt="imgtheme" class="themeimg">
+        </div>
+    </div>
+    <div class="end1">
+        <p>Want to talk? Contact Me here :</p>
+    </div>
+    <div class="end2">
+        <a href="" target="_blank"><img src="git.png" alt="gitimg" class="icons" id="icon1"></a>
+        <a href="" target="_blank"><img src="insta.png" alt="instaimg" class="icons" id="icon2"></a>
+        <a href="" target="_blank"><img src="abc.png" alt="abcimg" class="icons" id="icon3"></a>
+    </div>
+
+    <script>
+        let theme1col = document.getElementById("theme1")
+        let theme2col = document.getElementById("theme2")
+        let theme3col = document.getElementById("theme3")
+        let theme4col = document.getElementById("theme4")
+
+        let heading1col = document.getElementById("heading1")
+        let imgwallbordercol = document.getElementsByClassName("imgs")
+        let txtcol = document.getElementById("txt")
+        let main2col = document.getElementsByClassName("main2")
+        let projecttxtcol = document.getElementsByClassName("projecttext")
+        let end1bordercol = document.getElementsByClassName("end1")[0]
+
+        let activethemebordercol = document.getElementsByClassName("themeimg")
+
+        theme1col.addEventListener("click", () => {
+            for (let t=0; t<activethemebordercol.length;t++) {
+                activethemebordercol[t].style.borderColor = "white"
+            }
+            activethemebordercol[0].style.borderColor = "#fffac"
+            document.body.style.backgroundColor = "#101820"
+            heading1col.style.color = "#FEE715"
+            for (let z=0;z<imgwallbordercol.length; z++) {
+                imgwallbordercol[z].style.borderColor = "#F9E795"
+            }
+            main2col[0].style.backgroundColor = "#F9E795"
+            for (let z1=0; z1<projecttxtcol.length; z1++) {
+                projecttxtcol[z1].style.color = "#fffacf"
+            }
+            end1bordercol.style.borderColor = "#F9E795"
+        })
+
+        theme2col.addEventListener("click", () => {
+            for (let t1=0; t1<activethemebordercol.length;t1++) {
+                activethemebordercol[t1].style.borderColor = "white"
+            }
+            activethemebordercol[1].style.borderColor = "#E95793"
+            document.body.style.backgroundColor = "#610C9F"
+            heading1col.style.color = "#E95793"
+            for (let z=0;z<imgwallbordercol.length; z++) {
+                imgwallbordercol[z].style.borderColor = "#E95793"
+            }
+            main2col[0].style.backgroundColor = "#DA0C81"
+            for (let z1=0; z1<projecttxtcol.length; z1++) {
+                projecttxtcol[z1].style.color = "#E95793"
+            }
+            end1bordercol.style.borderColor = "#E95793"
+        })
+        
+        theme3col.addEventListener("click", () => {
+            for (let t2=0; t2<activethemebordercol.length;t2++) {
+                activethemebordercol[t2].style.borderColor = "white"
+            }
+            activethemebordercol[2].style.borderColor = "#DAFFFB"
+            document.body.style.backgroundColor = "#04364A"
+            heading1col.style.color = "#DAFFFB"
+            for (let z=0;z<imgwallbordercol.length; z++) {
+                imgwallbordercol[z].style.borderColor = "#DAFFFB"
+            }
+            main2col[0].style.backgroundColor = "#64CCC5"
+            for (let z1=0; z1<projecttxtcol.length; z1++) {
+                projecttxtcol[z1].style.color = "#DAFFFB"
+            }
+            end1bordercol.style.borderColor = "#64CCC5"
+        })
+
+        theme4col.addEventListener("click", () => {
+            for (let t3=0; t3<activethemebordercol.length;t3++) {
+                activethemebordercol[t3].style.borderColor = "white"
+            }
+            activethemebordercol[3].style.borderColor = "#F8F0E5"
+            document.body.style.backgroundColor = "#102C57"
+            heading1col.style.color = "#F8F0E5"
+            for (let z=0;z<imgwallbordercol.length; z++) {
+                imgwallbordercol[z].style.borderColor = "#F8F0E5"
+            }
+            main2col[0].style.backgroundColor = "#DAC0A3"
+            for (let z1=0; z1<projecttxtcol.length; z1++) {
+                projecttxtcol[z1].style.color = "#F8F0E5"
+            }
+            end1bordercol.style.borderColor = "#DAC0A3"
+        })
+
+    
+                    
+                    
+
+
+
+    </script>
+</body>
+</html>
